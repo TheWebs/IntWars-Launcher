@@ -18,6 +18,7 @@ namespace IntWarsLauncher
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// Started by TheWebs ║▌║█║▌│║▌║▌█
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -59,19 +60,36 @@ namespace IntWarsLauncher
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-            texto = File.ReadAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua");
-            ChangeRank();
+            if ((textBox.Text == "") || (textBox_Copy.Text == "") || (textBox_Copy.Text.Contains("1") == true) || (textBox_Copy.Text.Contains("2") == true) || (textBox_Copy.Text.Contains("3") == true) || (textBox_Copy.Text.Contains("4") == true) || (textBox_Copy.Text.Contains("5") == true) || (textBox_Copy.Text.Contains("6") == true) || (textBox_Copy.Text.Contains("7") == true) || (textBox_Copy.Text.Contains("8") == true) || (textBox_Copy.Text.Contains("9") == true))
+            {
+                MessageBox.Show("Please check if you didn't leave any field in blank or numbers in champion!", "IntWars Launcher - Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                texto = File.ReadAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua");
+                ChangeRank();
+                ChangeName();
+                File.WriteAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua", texto);
+            }
 
-    }
+        }
 
         private void ChangeRank()
         {
-            // Function 100% complete
+            // Function 100% complete  What it does: Theoretically it changes the player's rank; Practically it changes the loading border
             string[] virgulas = texto.Split(',');
             string[] iguais = virgulas[0].Split('=');
             string[] aspas = iguais[3].Split('"');
             texto = texto.Replace(aspas[1], comboBox_Copy.SelectedValue.ToString().ToUpper());
-            File.WriteAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua", texto);
+            
+        }
+
+        private void ChangeName()
+        {
+            string[] virgulas = texto.Split(',');
+            string[] iguais = virgulas[1].Split('=');
+            string[] aspas = iguais[1].Split('"');
+            texto = texto.Replace(aspas[1], textBox.Text);
         }
     }
 }
