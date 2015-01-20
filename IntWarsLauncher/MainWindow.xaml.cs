@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace IntWarsLauncher
 {
@@ -20,6 +21,8 @@ namespace IntWarsLauncher
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        string texto = File.ReadAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua");
         public MainWindow()
         {
             InitializeComponent();
@@ -56,7 +59,19 @@ namespace IntWarsLauncher
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
+            texto = File.ReadAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua");
+            ChangeRank();
 
+    }
+
+        private void ChangeRank()
+        {
+            // Function 100% complete
+            string[] virgulas = texto.Split(',');
+            string[] iguais = virgulas[0].Split('=');
+            string[] aspas = iguais[3].Split('"');
+            texto = texto.Replace(aspas[1], comboBox_Copy.SelectedValue.ToString().ToUpper());
+            File.WriteAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua", texto);
         }
     }
 }
