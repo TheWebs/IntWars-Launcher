@@ -44,6 +44,7 @@ namespace IntWarsLauncher
             comboBox_Copy1.Items.Add("Green");
             comboBox_Copy2.Items.Add("BLUE");
             comboBox_Copy2.Items.Add("PURPLE");
+
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -58,10 +59,10 @@ namespace IntWarsLauncher
 
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
-                if (e.ChangedButton == MouseButton.Left)
-                    DragMove();
-            
+
+            if (e.ChangedButton == MouseButton.Left)
+                DragMove();
+
         }
 
         public static void DoEvents()
@@ -86,7 +87,7 @@ namespace IntWarsLauncher
                 ChangeRibbon();
                 ChangeTeam();
                 File.WriteAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua", texto);
-                ProgressBar1.Foreground = Brushes.Black;
+                ProgressBar1.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF424242"));
                 textBlock.Foreground = Brushes.Black;
                 for (int i = 1; i <= 100; i++)
                 {
@@ -106,9 +107,10 @@ namespace IntWarsLauncher
                         textBlock.Text = i + "%";
                         DoEvents();
                     }
-                    
+
                 }
-                
+                //AQUI
+                ProgressBar1.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF424242"));
 
             }
 
@@ -121,7 +123,7 @@ namespace IntWarsLauncher
             string[] iguais = virgulas[0].Split('=');
             string[] aspas = iguais[3].Split('"');
             texto = texto.Replace(aspas[1], comboBox_Copy.SelectedValue.ToString().ToUpper());
-            
+
         }
         // Function 100% complete
         private void ChangeName()
@@ -170,5 +172,40 @@ namespace IntWarsLauncher
             string[] aspas = iguais[1].Split('"');
             texto = texto.Replace(aspas[1], comboBox_Copy2.SelectedItem.ToString().ToUpper());
         }
+
+        private void button_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Start_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Start.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF424242"));
+        }
+
+        private void Start_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Start.Foreground = Start.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFAFAFA"));
+        }
+
+        /*
+        CODDEEEE TAKEN FROMM MY OTHER PROJECTT LOLINFO! :PPP  It had the purpose of downloading the summoner's icon so it could be displayed!
+        public void ObterIcons()
+        {
+            WebClient joao = new WebClient();
+            string text = joao.DownloadString("http://ddragon.leagueoflegends.com/realms/euw.json").ToString();        From this line to 183 is so usefulll ^^
+            string[] URL = text.Split(':');
+            // url[8] da me isto "4.21.5","l"298
+            string[] bom = URL[8].Split('"');
+            // bom[1] da me isto 4.21.5
+            WebClient joao2 = new WebClient();
+            joao2.DownloadFile("http://ddragon.leagueoflegends.com/cdn/" + bom[1] + "/img/profileicon/" + ICON + ".png ", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Icon.png");
+            FileStream fileStream = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Icon.png", FileMode.Open, FileAccess.Read);
+            pictureBox1.BackgroundImage = Image.FromStream(fileStream);
+            fileStream.Close();
+            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Icon.png");
+
+        }
+        */
     }
 }

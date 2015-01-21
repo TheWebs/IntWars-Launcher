@@ -6,11 +6,68 @@
         xmlns:local="clr-namespace:IntWarsLauncher"
         mc:Ignorable="d"
         Title="MainWindow" Height="376" Width="647" Background="Transparent" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" >
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="MinHeight" Value="23"/>
+            <Setter Property="MinWidth" Value="30"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border" CornerRadius="0" BorderThickness="1"
+                    Background="#FFA4A4A4"
+                    BorderBrush="Transparent">
+                            <ContentPresenter Margin="2" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" 
+                                 RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                            </Trigger>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" 
+                          Property="Background" Value="#FAFAFA" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" 
+                          Property="Background" Value="#E0E0E0" />
+                                <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#606060" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Border" 
+                          Property="Background" Value="#EEEEEE" />
+                                <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#AAAAAA" />
+                                <Setter Property="Foreground" Value="#888888"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
-    <Grid Margin="0,0,0,0" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}">
-        <Rectangle Fill="#FF2B762F" HorizontalAlignment="Left" Height="25" Stroke="Transparent" VerticalAlignment="Top" Width="647" MouseDown="Rectangle_MouseDown"/>
+    <Grid Margin="0,0,0,0" Background="#FF424242">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="171*"/>
+            <RowDefinition Height="17*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="363*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FF151515" HorizontalAlignment="Left" Height="27" Stroke="Transparent" VerticalAlignment="Top" Width="649" MouseDown="Rectangle_MouseDown" Grid.ColumnSpan="2" Margin="-1,-1,-1,0"/>
 
-        <Button x:Name="button" Content="X" HorizontalAlignment="Left" Height="24" Margin="623,0,0,0" VerticalAlignment="Top" Width="24" Background="Transparent" Click="button_Click" Cursor="Hand" RenderTransformOrigin="0.5,0.5" FontFamily="Showcard Gothic" BorderBrush="Transparent" ToolTip="Exit">
+        <Button x:Name="button" Content="X" HorizontalAlignment="Center" Height="27" Margin="334,-1,-1,0" VerticalAlignment="Top" Width="25" Background="Transparent" Click="button_Click" Cursor="Hand" RenderTransformOrigin="0.5,0.5" FontFamily="Showcard Gothic" BorderBrush="Transparent" ToolTip="Exit" Grid.Column="1" MouseEnter="button_MouseEnter">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -20,10 +77,10 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="button_Copy" Content="¯" HorizontalAlignment="Left" Height="24" Margin="594,0,0,0" VerticalAlignment="Top" Width="24" Background="Transparent" Click="minimize_Click" Cursor="Hand" RenderTransformOrigin="0.5,0.5" FontFamily="Wide Latin" BorderBrush="Transparent" FontSize="36" FontWeight="Bold" ToolTip="Minimize">
+        <Button x:Name="button_Copy" Content="¯" HorizontalAlignment="Right" Height="27" Margin="0,-1,27,0" VerticalAlignment="Top" Width="24" Background="#FFA4A4A4" Click="minimize_Click" Cursor="Hand" RenderTransformOrigin="0.5,0.5" FontFamily="Wide Latin" BorderBrush="Transparent" FontSize="36" FontWeight="Bold" ToolTip="Minimize" Grid.Column="1">
             <Button.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform/>
+                    <ScaleTransform ScaleX="-1"/>
                     <SkewTransform/>
                     <RotateTransform Angle="0.000
                                      "/>
@@ -31,40 +88,25 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Rectangle Fill="#FF2B762F" HorizontalAlignment="Left" Height="63" Margin="0,313,0,0" Stroke="Transparent" VerticalAlignment="Top" Width="647"/>
-        <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" Height="62" Margin="212,314,0,0" VerticalAlignment="Top" Width="223" BorderBrush="#FF2B762F" FontFamily="Cooper Black" FontSize="21.333" Cursor="Hand" ToolTip="Start IntWars" Background="#FF2B762F" Click="Start_Click"/>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="278" Margin="10,30,0,0" VerticalAlignment="Top" Width="627" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}">
-            <TabItem Header="Basic settings" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Cursor="Hand" FontFamily="Nightclub BTN" FontSize="14.667">
-                <Grid Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Cursor="Arrow" Margin="0,0,0,40">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="4*"/>
-                        <ColumnDefinition Width="23*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="202,55,0,0" TextWrapping="Wrap" Text="IntWars" VerticalAlignment="Top" Width="120" FontSize="12" Grid.Column="1"/>
-                    <Label x:Name="label" Content="Name: " HorizontalAlignment="Left" Margin="99,50,0,0" VerticalAlignment="Top" Height="33" Width="57" FontSize="16" Grid.Column="1"/>
-                    <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="202,93,0,0" TextWrapping="Wrap" Text="Ezreal" VerticalAlignment="Top" Width="120" FontSize="12" Grid.Column="1"/>
-                    <Label x:Name="label_Copy" Content="Champion: " HorizontalAlignment="Left" Margin="99,88,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" Grid.Column="1"/>
-                    <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="23" Margin="202,137,0,0" VerticalAlignment="Top" Width="54" Cursor="Hand" SelectedIndex="0" Grid.Column="1"/>
-                    <Label x:Name="label_Copy1" Content="Skin: " HorizontalAlignment="Left" Margin="99,130,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" Grid.Column="1"/>
-                    <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Height="23" Margin="202,173,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0" Grid.Column="1"/>
-                    <Label x:Name="label_Copy2" Content="Rank:" HorizontalAlignment="Left" Margin="99,168,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" Grid.Column="1"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Advanced" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" FontFamily="Nightclub BTN" FontSize="14.667">
-                <Grid Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}">
-                    <ComboBox x:Name="comboBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="274,61,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0"/>
-                    <Label x:Name="label_Copy3" Content="Ribbon:" HorizontalAlignment="Left" Margin="195,56,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16"/>
-                    <ComboBox x:Name="comboBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="274,173,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0"/>
-                    <Label x:Name="label_Copy4" Content="Team
-:" HorizontalAlignment="Left" Margin="195,168,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16"/>
-                    <ComboBox x:Name="comboBox_Copy3" HorizontalAlignment="Left" Height="23" Margin="274,117,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0"/>
-                    <Label x:Name="label_Copy5" Content="Icon:" HorizontalAlignment="Left" Margin="195,112,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16"/>
-                </Grid>
-            </TabItem>
-        </TabControl>
-        <ProgressBar x:Name="ProgressBar1" HorizontalAlignment="Left" Height="31" Margin="0,283,0,0" VerticalAlignment="Top" Width="647" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Foreground="#FF292929"/>
-        <Label x:Name="label1" Content="IntWars Launcher" HorizontalAlignment="Left" Height="39" Margin="227,-9,0,0" VerticalAlignment="Top" Width="196" FontFamily="Segoe WP Black" FontSize="21.333"/>
-        <TextBlock x:Name="textBlock" Margin="310,290,213,55" TextWrapping="Wrap" FontFamily="Segoe WP Black"/>
+        <Rectangle Fill="#FF151515" HorizontalAlignment="Left" Height="65" Margin="-1,313,0,-2" Stroke="Transparent" VerticalAlignment="Top" Width="649" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" Height="64" Margin="212,314,0,-2" VerticalAlignment="Top" Width="223" BorderBrush="#FF151515" FontFamily="Century Gothic" FontSize="21.333" Cursor="Hand" ToolTip="Start IntWars" Background="#FF424242" Click="Start_Click" Grid.ColumnSpan="2" Foreground="#FFFAFAFA" Grid.RowSpan="2" MouseEnter="Start_MouseEnter" MouseLeave="Start_MouseLeave"/>
+        <ProgressBar x:Name="ProgressBar1" HorizontalAlignment="Left" Height="31" Margin="-1,284,-1,0" VerticalAlignment="Top" Width="649" BorderBrush="Transparent" Foreground="#FF151515" Grid.ColumnSpan="2" Background="#FF151515"/>
+        <Label x:Name="label1" Content="IntWars Launcher" HorizontalAlignment="Left" Height="39" Margin="230,-7,0,0" VerticalAlignment="Top" Width="196" FontFamily="Century Gothic" FontSize="21.333" Grid.ColumnSpan="2" Foreground="#FFFAFAFA"/>
+        <TextBlock x:Name="textBlock" Margin="26,290,213,21" TextWrapping="Wrap" FontFamily="Segoe WP Black" Grid.Column="1"/>
+        <ComboBox x:Name="comboBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="153,95,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0" FontFamily="Century Gothic" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy3" Content="Ribbon:" HorizontalAlignment="Left" Margin="74,90,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" FontFamily="Century Gothic"/>
+        <ComboBox x:Name="comboBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="153,207,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0" FontFamily="Century Gothic" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy4" Content="Team:" HorizontalAlignment="Left" Margin="74,202,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" FontFamily="Century Gothic"/>
+        <ComboBox x:Name="comboBox_Copy3" HorizontalAlignment="Left" Height="23" Margin="153,151,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0" FontFamily="Century Gothic" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy5" Content="Icon:" HorizontalAlignment="Left" Margin="74,146,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" FontFamily="Century Gothic"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="164,90,0,0" TextWrapping="Wrap" Text="IntWars" VerticalAlignment="Top" Width="120" FontSize="12" Grid.Column="1" Background="White" BorderBrush="#FFFAFAFA" FontFamily="Century Gothic"/>
+        <Label x:Name="label" Content="Name: " HorizontalAlignment="Left" Margin="61,85,0,0" VerticalAlignment="Top" Height="33" Width="57" FontSize="16" FontFamily="Century Gothic" Grid.Column="1"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="164,128,0,0" TextWrapping="Wrap" Text="Ezreal" VerticalAlignment="Top" Width="120" FontSize="12" Grid.Column="1" FontFamily="Century Gothic"/>
+        <Label x:Name="label_Copy" Content="Champion: " HorizontalAlignment="Left" Margin="61,123,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" FontFamily="Century Gothic" Grid.Column="1"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="23" Margin="164,172,0,0" VerticalAlignment="Top" Width="54" Cursor="Hand" SelectedIndex="0" Grid.Column="1" FontFamily="Century Gothic"/>
+        <Label x:Name="label_Copy1" Content="Skin: " HorizontalAlignment="Left" Margin="61,165,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" FontFamily="Century Gothic" Grid.Column="1"/>
+        <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Height="23" Margin="164,208,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0" Grid.Column="1" FontFamily="Century Gothic"/>
+        <Label x:Name="label_Copy2" Content="Rank:" HorizontalAlignment="Left" Margin="61,203,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" FontFamily="Century Gothic" Grid.Column="1"/>
 
     </Grid>
 

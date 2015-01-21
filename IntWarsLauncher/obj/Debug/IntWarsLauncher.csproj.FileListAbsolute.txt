@@ -26,3 +26,5 @@ C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\M
 C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher.g.resources
 C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher.Properties.Resources.resources
 C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher.csproj.GenerateResource.Cache
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\SplashScreen.g.cs
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\SplashScreen.baml
