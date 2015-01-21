@@ -1,7 +1,7 @@
 players = {
 	["player1"] = {
 		["rank"] = "DIAMOND",
-		["name"] = "Test",
+		["name"] = "IntWars",
 		["champion"] = "Ezreal",
 		["team"] = "BLUE", -- BLUE or PURPLE
 		["skin"] = 0,
@@ -14,7 +14,7 @@ players = {
 	--[[-- uncomment this for more players! you can also add more, up to 12!
 	["player2"] = {
 		["rank"] = "DIAMOND",
-		["name"] = "Test2",
+		["name"] = "IntWars2",
 		["champion"] = "Ezreal",
 		["team"] = "PURPLE",
 		["skin"] = 1,
@@ -28,7 +28,7 @@ players = {
    --[[
 	["player3"] = {
 		["rank"] = "DIAMOND",
-		["name"] = "Test3",
+		["name"] = "IntWars3",
 		["champion"] = "Caitlyn",
 		["team"] = "BLUE",
 		["skin"] = 3,

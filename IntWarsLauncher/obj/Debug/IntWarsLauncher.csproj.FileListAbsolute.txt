@@ -12,3 +12,17 @@ c:\users\francisco\documents\visual studio 2015\Projects\IntWarsLauncher\IntWars
 c:\users\francisco\documents\visual studio 2015\Projects\IntWarsLauncher\IntWarsLauncher\obj\Debug\IntWarsLauncher.csproj.GenerateResource.Cache
 c:\users\francisco\documents\visual studio 2015\Projects\IntWarsLauncher\IntWarsLauncher\obj\Debug\IntWarsLauncher.exe
 c:\users\francisco\documents\visual studio 2015\Projects\IntWarsLauncher\IntWarsLauncher\obj\Debug\IntWarsLauncher.pdb
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\bin\Debug\IntWarsLauncher.exe.config
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher.exe
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher.pdb
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\bin\Debug\IntWarsLauncher.exe
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\bin\Debug\IntWarsLauncher.pdb
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher.csprojResolveAssemblyReference.cache
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\MainWindow.g.cs
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\App.g.cs
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher_MarkupCompile.cache
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher_MarkupCompile.lref
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\MainWindow.baml
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher.g.resources
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher.Properties.Resources.resources
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher.csproj.GenerateResource.Cache

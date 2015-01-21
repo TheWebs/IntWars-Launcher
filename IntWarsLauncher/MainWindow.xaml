@@ -35,7 +35,7 @@
         <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" Height="62" Margin="212,314,0,0" VerticalAlignment="Top" Width="223" BorderBrush="#FF2B762F" FontFamily="Cooper Black" FontSize="21.333" Cursor="Hand" ToolTip="Start IntWars" Background="#FF2B762F" Click="Start_Click"/>
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="278" Margin="10,30,0,0" VerticalAlignment="Top" Width="627" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}">
             <TabItem Header="Basic settings" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Cursor="Hand" FontFamily="Nightclub BTN" FontSize="14.667">
-                <Grid Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Cursor="Arrow">
+                <Grid Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Cursor="Arrow" Margin="0,0,0,40">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="23*"/>
@@ -54,7 +54,9 @@
                 <Grid Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"/>
             </TabItem>
         </TabControl>
+        <ProgressBar x:Name="ProgressBar1" HorizontalAlignment="Left" Height="31" Margin="0,282,0,0" VerticalAlignment="Top" Width="647" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Foreground="#FF008DCF"/>
         <Label x:Name="label1" Content="IntWars Launcher" HorizontalAlignment="Left" Height="39" Margin="227,-9,0,0" VerticalAlignment="Top" Width="196" FontFamily="Segoe WP Black" FontSize="21.333"/>
+        <TextBlock x:Name="textBlock" Margin="310,290,213,55" TextWrapping="Wrap" FontFamily="Segoe WP Black"/>
 
     </Grid>
 

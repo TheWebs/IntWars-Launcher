@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Windows.Threading;
 
 namespace IntWarsLauncher
 {
@@ -58,6 +59,12 @@ namespace IntWarsLauncher
             
         }
 
+        public static void DoEvents()
+        {
+            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new Action(delegate { }));
+        }
+
+
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             if ((textBox.Text == "") || (textBox_Copy.Text == "") || (textBox_Copy.Text.Contains("1") == true) || (textBox_Copy.Text.Contains("2") == true) || (textBox_Copy.Text.Contains("3") == true) || (textBox_Copy.Text.Contains("4") == true) || (textBox_Copy.Text.Contains("5") == true) || (textBox_Copy.Text.Contains("6") == true) || (textBox_Copy.Text.Contains("7") == true) || (textBox_Copy.Text.Contains("8") == true) || (textBox_Copy.Text.Contains("9") == true))
@@ -69,7 +76,18 @@ namespace IntWarsLauncher
                 texto = File.ReadAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua");
                 ChangeRank();
                 ChangeName();
+                ChangeChampion();
                 File.WriteAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua", texto);
+                for (int i = 1; i <= 100; i++)
+                {
+                    ProgressBar1.Value = i;
+                    System.Threading.Thread.Sleep(10);
+                    textBlock.Text = i + "%";
+                    DoEvents();
+                    
+                }
+                ProgressBar1.Foreground = Brushes.Green;
+
             }
 
         }
@@ -90,6 +108,14 @@ namespace IntWarsLauncher
             string[] iguais = virgulas[1].Split('=');
             string[] aspas = iguais[1].Split('"');
             texto = texto.Replace(aspas[1], textBox.Text);
+        }
+
+        private void ChangeChampion()
+        {
+            string[] virgulas = texto.Split(',');
+            string[] iguais = virgulas[2].Split('=');
+            string[] aspas = iguais[1].Split('"');
+            texto = texto.Replace(aspas[1], textBox_Copy.Text);
         }
     }
 }
