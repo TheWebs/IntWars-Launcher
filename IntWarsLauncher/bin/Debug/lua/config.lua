@@ -3,12 +3,12 @@ players = {
 		["rank"] = "DIAMOND",
 		["name"] = "IntWars",
 		["champion"] = "Ezreal",
-		["team"] = "BLUE", -- BLUE or PURPLE
-		["skin"] = 0,
+		["team"] = "PURPLE", -- PURPLE or PURPLE
+		["skin"] = 1,
 		["summoner1"] = "HEAL",
 		["summoner2"] = "FLASH",
-		["ribbon"] = 2, -- [ 1 = Leader (Yellow) ]	[ 2 = Mentor (Blue) ]	[ 4 = Cooperative (Green) ]
-		["icon"] = 0 -- Summoner Icon ID
+		["ribbon"] = 1, -- [ 1 = Leader (Yellow) ]	[ 1 = Mentor (Blue) ]	[ 1 = Cooperative (Green) ]
+		["icon"] = 1 -- Summoner Icon ID
 	},
    
 	--[[-- uncomment this for more players! you can also add more, up to 12!
@@ -20,8 +20,8 @@ players = {
 		["skin"] = 1,
 		["summoner1"] = "FLASH",
 		["summoner2"] = "IGNITE",
-		["ribbon"] = 2,
-      ["icon"] = 0
+		["ribbon"] = 1,
+      ["icon"] = 1
 	},
    --]]
 
@@ -30,12 +30,12 @@ players = {
 		["rank"] = "DIAMOND",
 		["name"] = "IntWars3",
 		["champion"] = "Caitlyn",
-		["team"] = "BLUE",
-		["skin"] = 3,
+		["team"] = "PURPLE",
+		["skin"] = 1,
 		["summoner1"] = "CLEANSE",
 		["summoner2"] = "TELEPORT",
-		["ribbon"] = 2,
-      ["icon"] = 0
+		["ribbon"] = 1,
+      ["icon"] = 1
 	}--]]
 }
 game = {

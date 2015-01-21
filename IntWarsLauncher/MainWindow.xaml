@@ -40,21 +40,29 @@
                         <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="23*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="161,55,0,0" TextWrapping="Wrap" Text="IntWars" VerticalAlignment="Top" Width="120" FontSize="12" Grid.Column="1"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="202,55,0,0" TextWrapping="Wrap" Text="IntWars" VerticalAlignment="Top" Width="120" FontSize="12" Grid.Column="1"/>
                     <Label x:Name="label" Content="Name: " HorizontalAlignment="Left" Margin="99,50,0,0" VerticalAlignment="Top" Height="33" Width="57" FontSize="16" Grid.Column="1"/>
                     <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="202,93,0,0" TextWrapping="Wrap" Text="Ezreal" VerticalAlignment="Top" Width="120" FontSize="12" Grid.Column="1"/>
                     <Label x:Name="label_Copy" Content="Champion: " HorizontalAlignment="Left" Margin="99,88,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" Grid.Column="1"/>
-                    <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="23" Margin="158,137,0,0" VerticalAlignment="Top" Width="54" Cursor="Hand" SelectedIndex="0" Grid.Column="1"/>
-                    <Label x:Name="label_Copy1" Content="Skin: " HorizontalAlignment="Left" Margin="103,130,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" Grid.Column="1"/>
-                    <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Height="23" Margin="165,173,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0" Grid.Column="1"/>
-                    <Label x:Name="label_Copy2" Content="Rank:" HorizontalAlignment="Left" Margin="103,168,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" Grid.Column="1"/>
+                    <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="23" Margin="202,137,0,0" VerticalAlignment="Top" Width="54" Cursor="Hand" SelectedIndex="0" Grid.Column="1"/>
+                    <Label x:Name="label_Copy1" Content="Skin: " HorizontalAlignment="Left" Margin="99,130,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" Grid.Column="1"/>
+                    <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Height="23" Margin="202,173,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0" Grid.Column="1"/>
+                    <Label x:Name="label_Copy2" Content="Rank:" HorizontalAlignment="Left" Margin="99,168,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16" Grid.Column="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Advanced" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" FontFamily="Nightclub BTN" FontSize="14.667">
-                <Grid Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"/>
+                <Grid Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}">
+                    <ComboBox x:Name="comboBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="274,61,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0"/>
+                    <Label x:Name="label_Copy3" Content="Ribbon:" HorizontalAlignment="Left" Margin="195,56,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16"/>
+                    <ComboBox x:Name="comboBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="274,173,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0"/>
+                    <Label x:Name="label_Copy4" Content="Team
+:" HorizontalAlignment="Left" Margin="195,168,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16"/>
+                    <ComboBox x:Name="comboBox_Copy3" HorizontalAlignment="Left" Height="23" Margin="274,117,0,0" VerticalAlignment="Top" Width="157" Cursor="Hand" SelectedIndex="0"/>
+                    <Label x:Name="label_Copy5" Content="Icon:" HorizontalAlignment="Left" Margin="195,112,0,0" VerticalAlignment="Top" Height="33" Width="98" FontSize="16"/>
+                </Grid>
             </TabItem>
         </TabControl>
-        <ProgressBar x:Name="ProgressBar1" HorizontalAlignment="Left" Height="31" Margin="0,282,0,0" VerticalAlignment="Top" Width="647" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Foreground="#FF008DCF"/>
+        <ProgressBar x:Name="ProgressBar1" HorizontalAlignment="Left" Height="31" Margin="0,283,0,0" VerticalAlignment="Top" Width="647" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Foreground="#FF292929"/>
         <Label x:Name="label1" Content="IntWars Launcher" HorizontalAlignment="Left" Height="39" Margin="227,-9,0,0" VerticalAlignment="Top" Width="196" FontFamily="Segoe WP Black" FontSize="21.333"/>
         <TextBlock x:Name="textBlock" Margin="310,290,213,55" TextWrapping="Wrap" FontFamily="Segoe WP Black"/>
 

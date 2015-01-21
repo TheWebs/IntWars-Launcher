@@ -38,7 +38,12 @@ namespace IntWarsLauncher
             comboBox_Copy.Items.Add("Diamond");
             comboBox_Copy.Items.Add("Challenger");
             comboBox_Copy.SelectedIndex = 4;
-
+            comboBox_Copy1.Items.Add("Yellow");
+            comboBox_Copy1.Items.Add("Blue");
+            comboBox_Copy1.Items.Add("Red");
+            comboBox_Copy1.Items.Add("Green");
+            comboBox_Copy2.Items.Add("BLUE");
+            comboBox_Copy2.Items.Add("PURPLE");
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -77,16 +82,33 @@ namespace IntWarsLauncher
                 ChangeRank();
                 ChangeName();
                 ChangeChampion();
+                ChangeSkin();
+                ChangeRibbon();
+                ChangeTeam();
                 File.WriteAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua", texto);
+                ProgressBar1.Foreground = Brushes.Black;
+                textBlock.Foreground = Brushes.Black;
                 for (int i = 1; i <= 100; i++)
                 {
-                    ProgressBar1.Value = i;
-                    System.Threading.Thread.Sleep(10);
-                    textBlock.Text = i + "%";
-                    DoEvents();
+                    if (i == 45)
+                    {
+                        textBlock.Foreground = Brushes.White;
+                        ProgressBar1.Value = i;
+                        System.Threading.Thread.Sleep(10);
+                        textBlock.Text = i + "%";
+                        DoEvents();
+                    }
+                    else
+
+                    {
+                        ProgressBar1.Value = i;
+                        System.Threading.Thread.Sleep(10);
+                        textBlock.Text = i + "%";
+                        DoEvents();
+                    }
                     
                 }
-                ProgressBar1.Foreground = Brushes.Green;
+                
 
             }
 
@@ -101,7 +123,7 @@ namespace IntWarsLauncher
             texto = texto.Replace(aspas[1], comboBox_Copy.SelectedValue.ToString().ToUpper());
             
         }
-
+        // Function 100% complete
         private void ChangeName()
         {
             string[] virgulas = texto.Split(',');
@@ -109,13 +131,44 @@ namespace IntWarsLauncher
             string[] aspas = iguais[1].Split('"');
             texto = texto.Replace(aspas[1], textBox.Text);
         }
-
+        // Function 100% complete
         private void ChangeChampion()
         {
             string[] virgulas = texto.Split(',');
             string[] iguais = virgulas[2].Split('=');
             string[] aspas = iguais[1].Split('"');
             texto = texto.Replace(aspas[1], textBox_Copy.Text);
+        }
+        private void ChangeSkin()
+        {
+            string[] virgulas = texto.Split(',');
+            string[] iguais = virgulas[4].Split('=');
+            texto = texto.Replace(iguais[1], " " + comboBox.SelectedItem.ToString());
+        }
+
+        private void ChangeRibbon()
+        {
+            string[] virgulas = texto.Split(',');
+            string[] iguais = virgulas[7].Split('=');
+            //indexes 0-->1(yellow) 1-->2(blue) 2-->3(red) 3-->4(green)
+            decimal numero = Convert.ToDecimal(comboBox_Copy1.SelectedIndex.ToString());
+            numero = numero + 1;
+            texto = texto.Replace(iguais[1], " " + numero.ToString());
+        }
+
+        private void ChangeIcon()
+        {
+            string[] virgulas = texto.Split(',');
+            string[] iguais = virgulas[4].Split('=');
+            texto = texto.Replace(iguais[1], " " + comboBox.SelectedItem.ToString());
+        }
+
+        private void ChangeTeam()
+        {
+            string[] virgulas = texto.Split(',');
+            string[] iguais = virgulas[3].Split('=');
+            string[] aspas = iguais[1].Split('"');
+            texto = texto.Replace(aspas[1], comboBox_Copy2.SelectedItem.ToString().ToUpper());
         }
     }
 }
