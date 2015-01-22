@@ -28,3 +28,5 @@ C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\I
 C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\IntWarsLauncher.csproj.GenerateResource.Cache
 C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\SplashScreen.g.cs
 C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\SplashScreen.baml
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\Advanced.g.cs
+C:\Users\Francisco\Documents\GitHub\IntWars-Launcher\IntWarsLauncher\obj\Debug\Advanced.baml

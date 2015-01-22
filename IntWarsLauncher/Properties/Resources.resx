@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Champion" xml:space="preserve">
+    <value>Ezreal</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>687</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>IntWars</value>
+  </data>
+  <data name="Rank" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Ribbon" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Skin" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ufonts_com_friz_quadrata_tt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ufonts.com_friz-quadrata-tt.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

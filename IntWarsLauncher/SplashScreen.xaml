@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IntWarsLauncher"
         mc:Ignorable="d"
-        Title="SplashScreen" Height="300" Width="535" ResizeMode="NoResize" Topmost="True" WindowStyle="None">
+        Title="SplashScreen" Height="300" Width="535" ResizeMode="NoResize" Topmost="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -14,6 +14,14 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="79" Margin="20,2,0,0" TextWrapping="Wrap" Text="IntWars Launcher" VerticalAlignment="Top" Width="494" FontFamily="Hot Mustard BTN" FontSize="48"/>
-        <ProgressBar HorizontalAlignment="Left" Height="26" Margin="10,259,0,0" VerticalAlignment="Top" Width="515" Background="Transparent" BorderBrush="Transparent"/>
+        <ProgressBar x:Name="ProgressBar1" HorizontalAlignment="Left" Height="26" Margin="10,259,0,0" VerticalAlignment="Top" Width="515" Background="Transparent" BorderBrush="Transparent" Foreground="#FF898989"/>
+        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="159" Margin="10,86,0,0" VerticalAlignment="Top" Width="272" Background="Transparent" BorderBrush="Transparent" Foreground="White" FontFamily="Microdot" FontSize="9.333" IsEnabled="True" IsReadOnly="True">
+            <FlowDocument Focusable="False">
+                <Paragraph>
+                    <Run/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="73" Margin="299,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" FontFamily="Hot Mustard BTN" FontSize="48" Foreground="#FF898989"><Run/><LineBreak/><Run/></TextBlock>
     </Grid>
 </Window>

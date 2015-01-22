@@ -28,22 +28,37 @@ namespace IntWarsLauncher
         public MainWindow()
         {
             InitializeComponent();
-            comboBox.Items.Add("0");
-            comboBox.Items.Add("1");
-            comboBox.SelectedIndex = 1;
-            comboBox_Copy.Items.Add("Bronze");
-            comboBox_Copy.Items.Add("Silver");
-            comboBox_Copy.Items.Add("Gold");
-            comboBox_Copy.Items.Add("Platinum");
-            comboBox_Copy.Items.Add("Diamond");
-            comboBox_Copy.Items.Add("Challenger");
-            comboBox_Copy.SelectedIndex = 4;
-            comboBox_Copy1.Items.Add("Yellow");
-            comboBox_Copy1.Items.Add("Blue");
-            comboBox_Copy1.Items.Add("Red");
-            comboBox_Copy1.Items.Add("Green");
-            comboBox_Copy2.Items.Add("BLUE");
-            comboBox_Copy2.Items.Add("PURPLE");
+            if (File.Exists(Directory.GetCurrentDirectory() + "data.iwl"))
+            {
+                string settings = File.ReadAllText(Directory.GetCurrentDirectory() + "data.iwl");
+                string[] settingsbons = settings.Split('}');
+                textBox.Text = settingsbons[0];
+                textBox_Copy.Text = settingsbons[1];
+                comboBox.Items.Add("0");
+                comboBox.Items.Add("1");
+                comboBox.SelectedIndex = Convert.ToInt32(settingsbons[2]);
+                comboBox_Copy.Items.Add("Bronze");
+                comboBox_Copy.Items.Add("Silver");
+                comboBox_Copy.Items.Add("Gold");
+                comboBox_Copy.Items.Add("Platinum");
+                comboBox_Copy.Items.Add("Diamond");
+                comboBox_Copy.Items.Add("Challenger");
+                comboBox_Copy.SelectedIndex = Convert.ToInt32(settingsbons[3]);
+            }
+
+            else
+            {
+                comboBox.Items.Add("0");
+                comboBox.Items.Add("1");
+                comboBox.SelectedIndex = 1;
+                comboBox_Copy.Items.Add("Bronze");
+                comboBox_Copy.Items.Add("Silver");
+                comboBox_Copy.Items.Add("Gold");
+                comboBox_Copy.Items.Add("Platinum");
+                comboBox_Copy.Items.Add("Diamond");
+                comboBox_Copy.Items.Add("Challenger");
+                comboBox_Copy.SelectedIndex = 4;
+            }
 
         }
 
@@ -84,8 +99,6 @@ namespace IntWarsLauncher
                 ChangeName();
                 ChangeChampion();
                 ChangeSkin();
-                ChangeRibbon();
-                ChangeTeam();
                 File.WriteAllText(Directory.GetCurrentDirectory() + "\\lua\\config.lua", texto);
                 ProgressBar1.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF424242"));
                 textBlock.Foreground = Brushes.Black;
@@ -148,30 +161,7 @@ namespace IntWarsLauncher
             texto = texto.Replace(iguais[1], " " + comboBox.SelectedItem.ToString());
         }
 
-        private void ChangeRibbon()
-        {
-            string[] virgulas = texto.Split(',');
-            string[] iguais = virgulas[7].Split('=');
-            //indexes 0-->1(yellow) 1-->2(blue) 2-->3(red) 3-->4(green)
-            decimal numero = Convert.ToDecimal(comboBox_Copy1.SelectedIndex.ToString());
-            numero = numero + 1;
-            texto = texto.Replace(iguais[1], " " + numero.ToString());
-        }
-
-        private void ChangeIcon()
-        {
-            string[] virgulas = texto.Split(',');
-            string[] iguais = virgulas[4].Split('=');
-            texto = texto.Replace(iguais[1], " " + comboBox.SelectedItem.ToString());
-        }
-
-        private void ChangeTeam()
-        {
-            string[] virgulas = texto.Split(',');
-            string[] iguais = virgulas[3].Split('=');
-            string[] aspas = iguais[1].Split('"');
-            texto = texto.Replace(aspas[1], comboBox_Copy2.SelectedItem.ToString().ToUpper());
-        }
+        
 
         private void button_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -186,6 +176,15 @@ namespace IntWarsLauncher
         private void Start_MouseLeave(object sender, MouseEventArgs e)
         {
             Start.Foreground = Start.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFAFAFA"));
+        }
+
+        private void label_Copy4_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+            File.WriteAllText(Directory.GetCurrentDirectory() + "data.iwl", textBox.Text + "}" + textBox_Copy.Text + "}" + comboBox.SelectedIndex + "}" + comboBox_Copy.SelectedIndex);
+            Advanced advanced = new Advanced();
+            advanced.Show();
+            this.Hide();
         }
 
         /*

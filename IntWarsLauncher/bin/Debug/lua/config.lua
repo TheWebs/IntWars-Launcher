@@ -1,8 +1,8 @@
 players = {
 	["player1"] = {
-		["rank"] = "DIAMOND",
-		["name"] = "IntWars",
-		["champion"] = "Ezreal",
+		["rank"] = "CHALLENGER",
+		["name"] = "The mini sloth",
+		["champion"] = "Porquita",
 		["team"] = "BLUE", -- BLUE or BLUE
 		["skin"] = 1,
 		["summoner1"] = "HEAL",
@@ -13,9 +13,9 @@ players = {
    
 	--[[-- uncomment this for more players! you can also add more, up to 12!
 	["player2"] = {
-		["rank"] = "DIAMOND",
-		["name"] = "IntWars2",
-		["champion"] = "Ezreal",
+		["rank"] = "CHALLENGER",
+		["name"] = "The mini sloth2",
+		["champion"] = "Porquita",
 		["team"] = "BLUE",
 		["skin"] = 1,
 		["summoner1"] = "FLASH",
@@ -27,8 +27,8 @@ players = {
 
    --[[
 	["player3"] = {
-		["rank"] = "DIAMOND",
-		["name"] = "IntWars3",
+		["rank"] = "CHALLENGER",
+		["name"] = "The mini sloth3",
 		["champion"] = "Caitlyn",
 		["team"] = "BLUE",
 		["skin"] = 1,
